@@ -1,0 +1,3239 @@
+openapi: 3.0.1
+info:
+  title: Emerald Web Api
+  version: v1.0.0
+servers:
+- url: /
+security:
+- Bearer: []
+paths:
+  /api/Admin/checkListCategories:
+    get:
+      tags:
+      - Admin
+      operationId: apiAdminCheckListCategoriesGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/checkListCategory/create:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminCheckListCategoryCreatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CheckListCategoryCreateRequest'
+            example:
+              Name: Shakir
+              ParentId: 45
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckListCategoryCreateRequest'
+            example:
+              Name: Shakir
+              ParentId: 45
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CheckListCategoryCreateRequest'
+            example:
+              Name: Shakir
+              ParentId: 45
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CheckListCategoryCreateRequest'
+            example:
+              Name: Shakir
+              ParentId: 45
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/note/category:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminNoteCategoryPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationNoteCategoryRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationNoteCategoryRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationNoteCategoryRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationNoteCategoryRequest'
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/guarantorRoles:
+    get:
+      tags:
+      - Admin
+      operationId: apiAdminGuarantorRolesGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/guarantorRoles/create:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminGuarantorRolesCreatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GuarantorRolesCreateRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GuarantorRolesCreateRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GuarantorRolesCreateRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GuarantorRolesCreateRequest'
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/maritalStatuses:
+    get:
+      tags:
+      - Admin
+      operationId: apiAdminMaritalStatusesGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/businessTypes:
+    get:
+      tags:
+      - Admin
+      operationId: apiAdminBusinessTypesGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/loanProducts:
+    get:
+      tags:
+      - Admin
+      operationId: apiAdminLoanProductsGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/loanPurposes:
+    get:
+      tags:
+      - Admin
+      operationId: apiAdminLoanPurposesGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/maritalStatus/create:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminMaritalStatusCreatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/MaritalStatusCreateRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MaritalStatusCreateRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MaritalStatusCreateRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/MaritalStatusCreateRequest'
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/businessType/create:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminBusinessTypeCreatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/BusinessTypeCreateRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BusinessTypeCreateRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BusinessTypeCreateRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BusinessTypeCreateRequest'
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/loanProducts/create:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminLoanProductsCreatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/LoanProductCreateRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoanProductCreateRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LoanProductCreateRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LoanProductCreateRequest'
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/RolePermissions/{RoleId}:
+    get:
+      tags:
+      - Admin
+      operationId: apiAdminRolePermissionsRoleIdGET
+      parameters:
+      - name: RoleId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+          default: ""
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/RolePermissions:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminRolePermissionsPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/RolePermissionModificationRequest'
+            example:
+              RolePermissions:
+              - RolePermissionId: 2
+                PermissionId: 1
+                CanEdit: false
+                CanView: false
+                CanAdd: false
+              - RolePermissionId: 0
+                PermissionId: 2
+                CanEdit: false
+                CanView: false
+                CanAdd: true
+              - RolePermissionId: 0
+                PermissionId: 3
+                CanEdit: false
+                CanView: true
+                CanAdd: true
+              RoleId: 04145692-b5c9-411c-b33d-671261a2ebe0
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RolePermissionModificationRequest'
+            example:
+              RolePermissions:
+              - RolePermissionId: 2
+                PermissionId: 1
+                CanEdit: false
+                CanView: false
+                CanAdd: false
+              - RolePermissionId: 0
+                PermissionId: 2
+                CanEdit: false
+                CanView: false
+                CanAdd: true
+              - RolePermissionId: 0
+                PermissionId: 3
+                CanEdit: false
+                CanView: true
+                CanAdd: true
+              RoleId: 04145692-b5c9-411c-b33d-671261a2ebe0
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RolePermissionModificationRequest'
+            example:
+              RolePermissions:
+              - RolePermissionId: 2
+                PermissionId: 1
+                CanEdit: false
+                CanView: false
+                CanAdd: false
+              - RolePermissionId: 0
+                PermissionId: 2
+                CanEdit: false
+                CanView: false
+                CanAdd: true
+              - RolePermissionId: 0
+                PermissionId: 3
+                CanEdit: false
+                CanView: true
+                CanAdd: true
+              RoleId: 04145692-b5c9-411c-b33d-671261a2ebe0
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RolePermissionModificationRequest'
+            example:
+              RolePermissions:
+              - RolePermissionId: 2
+                PermissionId: 1
+                CanEdit: false
+                CanView: false
+                CanAdd: false
+              - RolePermissionId: 0
+                PermissionId: 2
+                CanEdit: false
+                CanView: false
+                CanAdd: true
+              - RolePermissionId: 0
+                PermissionId: 3
+                CanEdit: false
+                CanView: true
+                CanAdd: true
+              RoleId: 04145692-b5c9-411c-b33d-671261a2ebe0
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/user/Create:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminUserCreatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserRequest'
+            example:
+              Id: "1"
+              FirstName: adeel
+              LastName: Hassan
+              Email: ABS
+              UserName: AVChgshsshs
+              PasswordHash: absafasfc
+              RoleName: User
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserRequest'
+            example:
+              Id: "1"
+              FirstName: adeel
+              LastName: Hassan
+              Email: ABS
+              UserName: AVChgshsshs
+              PasswordHash: absafasfc
+              RoleName: User
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserRequest'
+            example:
+              Id: "1"
+              FirstName: adeel
+              LastName: Hassan
+              Email: ABS
+              UserName: AVChgshsshs
+              PasswordHash: absafasfc
+              RoleName: User
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserRequest'
+            example:
+              Id: "1"
+              FirstName: adeel
+              LastName: Hassan
+              Email: ABS
+              UserName: AVChgshsshs
+              PasswordHash: absafasfc
+              RoleName: User
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/user/update:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminUserUpdatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserUpdateRequest'
+            example:
+              Id: "1"
+              FirstName: Adeel
+              LastName: hassan
+              Email: adeelhassan592@gmail.com
+              UserName: asd
+              PasswordHash: asf
+              RoleName: asf
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserUpdateRequest'
+            example:
+              Id: "1"
+              FirstName: Adeel
+              LastName: hassan
+              Email: adeelhassan592@gmail.com
+              UserName: asd
+              PasswordHash: asf
+              RoleName: asf
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserUpdateRequest'
+            example:
+              Id: "1"
+              FirstName: Adeel
+              LastName: hassan
+              Email: adeelhassan592@gmail.com
+              UserName: asd
+              PasswordHash: asf
+              RoleName: asf
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUserUpdateRequest'
+            example:
+              Id: "1"
+              FirstName: Adeel
+              LastName: hassan
+              Email: adeelhassan592@gmail.com
+              UserName: asd
+              PasswordHash: asf
+              RoleName: asf
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/Role/Create:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminRoleCreatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationRoleRequest'
+            example:
+              Name: adeel
+              NormalizedName: adeel
+              ConcurrencyStamp: ad
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationRoleRequest'
+            example:
+              Name: adeel
+              NormalizedName: adeel
+              ConcurrencyStamp: ad
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationRoleRequest'
+            example:
+              Name: adeel
+              NormalizedName: adeel
+              ConcurrencyStamp: ad
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationRoleRequest'
+            example:
+              Name: adeel
+              NormalizedName: adeel
+              ConcurrencyStamp: ad
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Admin/role/update:
+    post:
+      tags:
+      - Admin
+      operationId: apiAdminRoleUpdatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationRoleRequest'
+            example:
+              Name: adeel
+              NormalizedName: adeel
+              ConcurrencyStamp: ad
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationRoleRequest'
+            example:
+              Name: adeel
+              NormalizedName: adeel
+              ConcurrencyStamp: ad
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationRoleRequest'
+            example:
+              Name: adeel
+              NormalizedName: adeel
+              ConcurrencyStamp: ad
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationRoleRequest'
+            example:
+              Name: adeel
+              NormalizedName: adeel
+              ConcurrencyStamp: ad
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Admin
+  /api/Application/GetAccountScoreData:
+    post:
+      tags:
+      - Application
+      operationId: apiApplicationGetAccountScoreDataPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AccountScoreRequest'
+            example:
+              CompanyID: 1134
+              ApplicationID: 1032
+              IsExisintg: false
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountScoreRequest'
+            example:
+              CompanyID: 1134
+              ApplicationID: 1032
+              IsExisintg: false
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AccountScoreRequest'
+            example:
+              CompanyID: 1134
+              ApplicationID: 1032
+              IsExisintg: false
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AccountScoreRequest'
+            example:
+              CompanyID: 1134
+              ApplicationID: 1032
+              IsExisintg: false
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/GetAccountScoreReport/{companyId}:
+    get:
+      tags:
+      - Application
+      operationId: apiApplicationGetAccountScoreReportCompanyIdGET
+      parameters:
+      - name: companyId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          format: double
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/CompanyApplications/{companyId}:
+    get:
+      tags:
+      - Application
+      operationId: apiApplicationCompanyApplicationsCompanyIdGET
+      parameters:
+      - name: companyId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          format: double
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/Create:
+    post:
+      tags:
+      - Application
+      operationId: apiApplicationCreatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationCreateRequest'
+            example:
+              LoanApplied: 15000
+              LoanTerm: 12
+              LoanPurpose: Stock
+              WhenYouNeedLoan: ASAP
+              ApplicationStatusId: 3
+              HaveBusinessRevenue: true
+              MonthlyTotalSales: 2500000
+              MainGuarantor:
+                GuarantorID: 0
+                CompanyID: 0
+                ForName: adeel
+                SurName: hassan
+                Birth: 11-Feb-1994
+                Title: Mr
+                Mobile: fdsg42135
+                Email: adeelhassan592@gmail.com
+                Is25PercentShareHolder: false
+                Director: false
+              CompanyDatas:
+                CompanyID: 0
+                CompanyName: BANK  LTD
+                CoRegNo: "04348058"
+                Website: www.BankLTD.com
+                BusinessSector: Stock investment
+                Email: bankltd@gmail.com
+                BusinessType: Ltd Company
+                IncorporationDate: 07-Jan-2002
+                NoOfDirectors: 13
+                NoOf25PercentageShareHolders: 12
+              Addressview:
+                AddressID: 0
+                GuarantorID: 0
+                CompanyID: 0
+                Property: Bank Gallery
+                Street: 13 High Street
+                Locality: Kenilworth
+                County: Warwickshire
+                PostCode: CV8 1LY
+                AddressType: 1
+                AddressOrder: 0
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationCreateRequest'
+            example:
+              LoanApplied: 15000
+              LoanTerm: 12
+              LoanPurpose: Stock
+              WhenYouNeedLoan: ASAP
+              ApplicationStatusId: 3
+              HaveBusinessRevenue: true
+              MonthlyTotalSales: 2500000
+              MainGuarantor:
+                GuarantorID: 0
+                CompanyID: 0
+                ForName: adeel
+                SurName: hassan
+                Birth: 11-Feb-1994
+                Title: Mr
+                Mobile: fdsg42135
+                Email: adeelhassan592@gmail.com
+                Is25PercentShareHolder: false
+                Director: false
+              CompanyDatas:
+                CompanyID: 0
+                CompanyName: BANK  LTD
+                CoRegNo: "04348058"
+                Website: www.BankLTD.com
+                BusinessSector: Stock investment
+                Email: bankltd@gmail.com
+                BusinessType: Ltd Company
+                IncorporationDate: 07-Jan-2002
+                NoOfDirectors: 13
+                NoOf25PercentageShareHolders: 12
+              Addressview:
+                AddressID: 0
+                GuarantorID: 0
+                CompanyID: 0
+                Property: Bank Gallery
+                Street: 13 High Street
+                Locality: Kenilworth
+                County: Warwickshire
+                PostCode: CV8 1LY
+                AddressType: 1
+                AddressOrder: 0
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationCreateRequest'
+            example:
+              LoanApplied: 15000
+              LoanTerm: 12
+              LoanPurpose: Stock
+              WhenYouNeedLoan: ASAP
+              ApplicationStatusId: 3
+              HaveBusinessRevenue: true
+              MonthlyTotalSales: 2500000
+              MainGuarantor:
+                GuarantorID: 0
+                CompanyID: 0
+                ForName: adeel
+                SurName: hassan
+                Birth: 11-Feb-1994
+                Title: Mr
+                Mobile: fdsg42135
+                Email: adeelhassan592@gmail.com
+                Is25PercentShareHolder: false
+                Director: false
+              CompanyDatas:
+                CompanyID: 0
+                CompanyName: BANK  LTD
+                CoRegNo: "04348058"
+                Website: www.BankLTD.com
+                BusinessSector: Stock investment
+                Email: bankltd@gmail.com
+                BusinessType: Ltd Company
+                IncorporationDate: 07-Jan-2002
+                NoOfDirectors: 13
+                NoOf25PercentageShareHolders: 12
+              Addressview:
+                AddressID: 0
+                GuarantorID: 0
+                CompanyID: 0
+                Property: Bank Gallery
+                Street: 13 High Street
+                Locality: Kenilworth
+                County: Warwickshire
+                PostCode: CV8 1LY
+                AddressType: 1
+                AddressOrder: 0
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationCreateRequest'
+            example:
+              LoanApplied: 15000
+              LoanTerm: 12
+              LoanPurpose: Stock
+              WhenYouNeedLoan: ASAP
+              ApplicationStatusId: 3
+              HaveBusinessRevenue: true
+              MonthlyTotalSales: 2500000
+              MainGuarantor:
+                GuarantorID: 0
+                CompanyID: 0
+                ForName: adeel
+                SurName: hassan
+                Birth: 11-Feb-1994
+                Title: Mr
+                Mobile: fdsg42135
+                Email: adeelhassan592@gmail.com
+                Is25PercentShareHolder: false
+                Director: false
+              CompanyDatas:
+                CompanyID: 0
+                CompanyName: BANK  LTD
+                CoRegNo: "04348058"
+                Website: www.BankLTD.com
+                BusinessSector: Stock investment
+                Email: bankltd@gmail.com
+                BusinessType: Ltd Company
+                IncorporationDate: 07-Jan-2002
+                NoOfDirectors: 13
+                NoOf25PercentageShareHolders: 12
+              Addressview:
+                AddressID: 0
+                GuarantorID: 0
+                CompanyID: 0
+                Property: Bank Gallery
+                Street: 13 High Street
+                Locality: Kenilworth
+                County: Warwickshire
+                PostCode: CV8 1LY
+                AddressType: 1
+                AddressOrder: 0
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/{id}:
+    get:
+      tags:
+      - Application
+      operationId: apiApplicationIdGET
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/Dropdowns:
+    get:
+      tags:
+      - Application
+      operationId: apiApplicationDropdownsGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/Duplicates/{id}:
+    get:
+      tags:
+      - Application
+      operationId: apiApplicationDuplicatesIdGET
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/DuplicateApplicationDetails:
+    post:
+      tags:
+      - Application
+      operationId: apiApplicationDuplicateApplicationDetailsPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/DuplicateLookupRequest'
+            example:
+              ApplicationID: 1141
+              DuplicateApplicationID: 6684
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DuplicateLookupRequest'
+            example:
+              ApplicationID: 1141
+              DuplicateApplicationID: 6684
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DuplicateLookupRequest'
+            example:
+              ApplicationID: 1141
+              DuplicateApplicationID: 6684
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/DuplicateLookupRequest'
+            example:
+              ApplicationID: 1141
+              DuplicateApplicationID: 6684
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/GetEquifaxData:
+    post:
+      tags:
+      - Application
+      operationId: apiApplicationGetEquifaxDataPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EquifaxRequest'
+            example:
+              CompanyID: 3
+              IsExisting: true
+              IsReport: false
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EquifaxRequest'
+            example:
+              CompanyID: 3
+              IsExisting: true
+              IsReport: false
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EquifaxRequest'
+            example:
+              CompanyID: 3
+              IsExisting: true
+              IsReport: false
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EquifaxRequest'
+            example:
+              CompanyID: 3
+              IsExisting: true
+              IsReport: false
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/ApplicationJourney/{id}:
+    get:
+      tags:
+      - Application
+      operationId: apiApplicationApplicationJourneyIdGET
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          format: double
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/ApplicationLoan/{id}:
+    get:
+      tags:
+      - Application
+      operationId: apiApplicationApplicationLoanIdGET
+      parameters:
+      - name: id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          format: double
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/addresslookup:
+    post:
+      tags:
+      - Application
+      operationId: apiApplicationAddresslookupPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AddressLookupRequest'
+            example:
+              PostCode: SL1 3DG
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddressLookupRequest'
+            example:
+              PostCode: SL1 3DG
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddressLookupRequest'
+            example:
+              PostCode: SL1 3DG
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddressLookupRequest'
+            example:
+              PostCode: SL1 3DG
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/companylookup:
+    post:
+      tags:
+      - Application
+      operationId: apiApplicationCompanylookupPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/CompanyLookupRequest'
+            example:
+              Name: bank
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyLookupRequest'
+            example:
+              Name: bank
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CompanyLookupRequest'
+            example:
+              Name: bank
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CompanyLookupRequest'
+            example:
+              Name: bank
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/applicationNote:
+    post:
+      tags:
+      - Application
+      operationId: apiApplicationApplicationNotePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationNotesDetailsRequest'
+            example:
+              ApplicationId: 16992
+              CategoryId: 9
+              NoteDetails: Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book. It has survived not
+                only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with
+                the release of Letraset sheets containing Lorem Ipsum passages, and
+                more recently with desktop publishing software like Aldus PageMaker
+                including versions of Lorem Ipsum.
+              CreatedBy: Test
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationNotesDetailsRequest'
+            example:
+              ApplicationId: 16992
+              CategoryId: 9
+              NoteDetails: Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book. It has survived not
+                only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with
+                the release of Letraset sheets containing Lorem Ipsum passages, and
+                more recently with desktop publishing software like Aldus PageMaker
+                including versions of Lorem Ipsum.
+              CreatedBy: Test
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationNotesDetailsRequest'
+            example:
+              ApplicationId: 16992
+              CategoryId: 9
+              NoteDetails: Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book. It has survived not
+                only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with
+                the release of Letraset sheets containing Lorem Ipsum passages, and
+                more recently with desktop publishing software like Aldus PageMaker
+                including versions of Lorem Ipsum.
+              CreatedBy: Test
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationNotesDetailsRequest'
+            example:
+              ApplicationId: 16992
+              CategoryId: 9
+              NoteDetails: Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of type
+                and scrambled it to make a type specimen book. It has survived not
+                only five centuries, but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with
+                the release of Letraset sheets containing Lorem Ipsum passages, and
+                more recently with desktop publishing software like Aldus PageMaker
+                including versions of Lorem Ipsum.
+              CreatedBy: Test
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/ApplicationNotes/{applicationId}:
+    get:
+      tags:
+      - Application
+      operationId: apiApplicationApplicationNotesApplicationIdGET
+      parameters:
+      - name: applicationId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          format: double
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/search:
+    post:
+      tags:
+      - Application
+      operationId: apiApplicationSearchPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationsSearchRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationsSearchRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationsSearchRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationsSearchRequest'
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Application/Update:
+    post:
+      tags:
+      - Application
+      operationId: apiApplicationUpdatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUpdateRequest'
+            example:
+              ApplicationId: 16992
+              LoanApplied: 15000
+              LoanTerm: 12
+              LoanPurpose: Stock
+              MainGuarantor:
+                GuarantorId: 0
+                Title: Mr
+                Forename: adeel
+                Surname: hassan
+                Dob: 1994-02-11T00:00:00
+                Mobile: fdsg42135
+                Email: adeelhassan592@gmail.com
+                Is25PercentShareHolder: false
+                IsDirector: false
+              Company:
+                CompanyId: 0
+                CompanyName: BANK LTD
+                RegistrationNo: "04348058"
+                BusinessType: Ltd Company
+                IncorporationDate: 2002-01-07T00:00:00
+                NoOfDirectors: 13
+                NoOf25PercentageShareHolders: 12
+                BusinessSector: Stock investment
+                Email: bankltd@gmail.com
+                Website: www.BankLTD.com
+              MainGuarantorAddress:
+                AddressId: 0
+                PostCode: "46000"
+                YearsAtAddress: 1
+                MonthAtAddress: 2
+                OccupancyType: Home Owner
+              RegisteredAddress:
+                AddressId: 0
+                PostCode: W1H 6HN
+              MainGuarantorPrevAddress:
+                AddressId: 0
+                PostCode: "44000"
+              MainBank:
+                BankName: UBL
+                SortCode: "222"
+                AccountNo: "22222222"
+              CheckListCategoryList:
+              - CheckListCategoryId: 1
+                Name: Old
+                IsHide: false
+                ApplicationCheckList:
+                - AppCheckId: 457570
+                  CheckListId: 1
+                  CheckListDesc: Loan Amount in Offered
+                  Required: true
+                - AppCheckId: 457571
+                  CheckListId: 2
+                  CheckListDesc: App Rec Email & SMS
+                  Required: true
+                - AppCheckId: 457572
+                  CheckListId: 3
+                  CheckListDesc: Companies House Pass
+                  Required: true
+                - AppCheckId: 457573
+                  CheckListId: 4
+                  CheckListDesc: Accounting Dates?
+                  Required: true
+                - AppCheckId: 457574
+                  CheckListId: 5
+                  CheckListDesc: Confirmation Statement Date?
+                  Required: true
+                - AppCheckId: 457575
+                  CheckListId: 6
+                  CheckListDesc: Directors
+                  Required: true
+                - AppCheckId: 457576
+                  CheckListId: 7
+                  CheckListDesc: PSC’s
+                  Required: true
+              - CheckListCategoryId: 10
+                Name: Root Parent
+                IsHide: false
+                CheckListChildCategoryList:
+                - CheckListCategoryId: 7
+                  Name: Underwriters Checklist
+                  ParentId: 10
+                  IsHide: false
+                  CheckListChildCategoryList:
+                  - CheckListCategoryId: 6
+                    Name: Customer Service Checklist
+                    ParentId: 7
+                    IsHide: false
+                    CheckListChildCategoryList:
+                    - CheckListCategoryId: 2
+                      Name: Post-Visit Checklist
+                      ParentId: 6
+                      IsHide: false
+                      ApplicationCheckList:
+                      - AppCheckId: 457577
+                        CheckListId: 91
+                        CheckListDesc: Risk Assess
+                        Required: true
+                      - AppCheckId: 457578
+                        CheckListId: 92
+                        CheckListDesc: Search Refresh
+                        Required: true
+                      - AppCheckId: 457579
+                        CheckListId: 93
+                        CheckListDesc: Fund via Barclays.net (-£195!)
+                        Required: true
+                      - AppCheckId: 457580
+                        CheckListId: 94
+                        CheckListDesc: Make a Loan in Emerald
+                        Required: true
+                      - AppCheckId: 457581
+                        CheckListId: 95
+                        CheckListDesc: Loan Funded Email
+                        Required: true
+                      - AppCheckId: 457582
+                        CheckListId: 96
+                        CheckListDesc: Send £1 for GT
+                        Required: true
+                      - AppCheckId: 457583
+                        CheckListId: 97
+                        CheckListDesc: Move to Funded
+                        Required: true
+              - CheckListCategoryId: 12
+                Name: Root Parent 1
+                IsHide: false
+                CheckListChildCategoryList:
+                - CheckListCategoryId: 11
+                  Name: Parent 1
+                  ParentId: 12
+                  IsHide: false
+                  CheckListChildCategoryList:
+                  - CheckListCategoryId: 4
+                    Name: Processing Ticklist
+                    ParentId: 11
+                    IsHide: false
+                    ApplicationCheckList:
+                    - AppCheckId: 457584
+                      CheckListId: 51
+                      CheckListDesc: Loan Amount in Offered
+                      Required: true
+                    - AppCheckId: 457585
+                      CheckListId: 52
+                      CheckListDesc: App Rec Email & SMS
+                      Required: true
+                    - AppCheckId: 457586
+                      CheckListId: 53
+                      CheckListDesc: Companies House Pass
+                      Required: true
+                    - AppCheckId: 457587
+                      CheckListId: 54
+                      CheckListDesc: Accounting Dates?
+                      Required: true
+                    - AppCheckId: 457588
+                      CheckListId: 55
+                      CheckListDesc: Confirmation Statement Date?
+                      Required: true
+                    - AppCheckId: 457589
+                      CheckListId: 56
+                      CheckListDesc: Directors
+                      Required: true
+                    - AppCheckId: 457590
+                      CheckListId: 57
+                      CheckListDesc: PSC’s
+                      Required: true
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUpdateRequest'
+            example:
+              ApplicationId: 16992
+              LoanApplied: 15000
+              LoanTerm: 12
+              LoanPurpose: Stock
+              MainGuarantor:
+                GuarantorId: 0
+                Title: Mr
+                Forename: adeel
+                Surname: hassan
+                Dob: 1994-02-11T00:00:00
+                Mobile: fdsg42135
+                Email: adeelhassan592@gmail.com
+                Is25PercentShareHolder: false
+                IsDirector: false
+              Company:
+                CompanyId: 0
+                CompanyName: BANK LTD
+                RegistrationNo: "04348058"
+                BusinessType: Ltd Company
+                IncorporationDate: 2002-01-07T00:00:00
+                NoOfDirectors: 13
+                NoOf25PercentageShareHolders: 12
+                BusinessSector: Stock investment
+                Email: bankltd@gmail.com
+                Website: www.BankLTD.com
+              MainGuarantorAddress:
+                AddressId: 0
+                PostCode: "46000"
+                YearsAtAddress: 1
+                MonthAtAddress: 2
+                OccupancyType: Home Owner
+              RegisteredAddress:
+                AddressId: 0
+                PostCode: W1H 6HN
+              MainGuarantorPrevAddress:
+                AddressId: 0
+                PostCode: "44000"
+              MainBank:
+                BankName: UBL
+                SortCode: "222"
+                AccountNo: "22222222"
+              CheckListCategoryList:
+              - CheckListCategoryId: 1
+                Name: Old
+                IsHide: false
+                ApplicationCheckList:
+                - AppCheckId: 457570
+                  CheckListId: 1
+                  CheckListDesc: Loan Amount in Offered
+                  Required: true
+                - AppCheckId: 457571
+                  CheckListId: 2
+                  CheckListDesc: App Rec Email & SMS
+                  Required: true
+                - AppCheckId: 457572
+                  CheckListId: 3
+                  CheckListDesc: Companies House Pass
+                  Required: true
+                - AppCheckId: 457573
+                  CheckListId: 4
+                  CheckListDesc: Accounting Dates?
+                  Required: true
+                - AppCheckId: 457574
+                  CheckListId: 5
+                  CheckListDesc: Confirmation Statement Date?
+                  Required: true
+                - AppCheckId: 457575
+                  CheckListId: 6
+                  CheckListDesc: Directors
+                  Required: true
+                - AppCheckId: 457576
+                  CheckListId: 7
+                  CheckListDesc: PSC’s
+                  Required: true
+              - CheckListCategoryId: 10
+                Name: Root Parent
+                IsHide: false
+                CheckListChildCategoryList:
+                - CheckListCategoryId: 7
+                  Name: Underwriters Checklist
+                  ParentId: 10
+                  IsHide: false
+                  CheckListChildCategoryList:
+                  - CheckListCategoryId: 6
+                    Name: Customer Service Checklist
+                    ParentId: 7
+                    IsHide: false
+                    CheckListChildCategoryList:
+                    - CheckListCategoryId: 2
+                      Name: Post-Visit Checklist
+                      ParentId: 6
+                      IsHide: false
+                      ApplicationCheckList:
+                      - AppCheckId: 457577
+                        CheckListId: 91
+                        CheckListDesc: Risk Assess
+                        Required: true
+                      - AppCheckId: 457578
+                        CheckListId: 92
+                        CheckListDesc: Search Refresh
+                        Required: true
+                      - AppCheckId: 457579
+                        CheckListId: 93
+                        CheckListDesc: Fund via Barclays.net (-£195!)
+                        Required: true
+                      - AppCheckId: 457580
+                        CheckListId: 94
+                        CheckListDesc: Make a Loan in Emerald
+                        Required: true
+                      - AppCheckId: 457581
+                        CheckListId: 95
+                        CheckListDesc: Loan Funded Email
+                        Required: true
+                      - AppCheckId: 457582
+                        CheckListId: 96
+                        CheckListDesc: Send £1 for GT
+                        Required: true
+                      - AppCheckId: 457583
+                        CheckListId: 97
+                        CheckListDesc: Move to Funded
+                        Required: true
+              - CheckListCategoryId: 12
+                Name: Root Parent 1
+                IsHide: false
+                CheckListChildCategoryList:
+                - CheckListCategoryId: 11
+                  Name: Parent 1
+                  ParentId: 12
+                  IsHide: false
+                  CheckListChildCategoryList:
+                  - CheckListCategoryId: 4
+                    Name: Processing Ticklist
+                    ParentId: 11
+                    IsHide: false
+                    ApplicationCheckList:
+                    - AppCheckId: 457584
+                      CheckListId: 51
+                      CheckListDesc: Loan Amount in Offered
+                      Required: true
+                    - AppCheckId: 457585
+                      CheckListId: 52
+                      CheckListDesc: App Rec Email & SMS
+                      Required: true
+                    - AppCheckId: 457586
+                      CheckListId: 53
+                      CheckListDesc: Companies House Pass
+                      Required: true
+                    - AppCheckId: 457587
+                      CheckListId: 54
+                      CheckListDesc: Accounting Dates?
+                      Required: true
+                    - AppCheckId: 457588
+                      CheckListId: 55
+                      CheckListDesc: Confirmation Statement Date?
+                      Required: true
+                    - AppCheckId: 457589
+                      CheckListId: 56
+                      CheckListDesc: Directors
+                      Required: true
+                    - AppCheckId: 457590
+                      CheckListId: 57
+                      CheckListDesc: PSC’s
+                      Required: true
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUpdateRequest'
+            example:
+              ApplicationId: 16992
+              LoanApplied: 15000
+              LoanTerm: 12
+              LoanPurpose: Stock
+              MainGuarantor:
+                GuarantorId: 0
+                Title: Mr
+                Forename: adeel
+                Surname: hassan
+                Dob: 1994-02-11T00:00:00
+                Mobile: fdsg42135
+                Email: adeelhassan592@gmail.com
+                Is25PercentShareHolder: false
+                IsDirector: false
+              Company:
+                CompanyId: 0
+                CompanyName: BANK LTD
+                RegistrationNo: "04348058"
+                BusinessType: Ltd Company
+                IncorporationDate: 2002-01-07T00:00:00
+                NoOfDirectors: 13
+                NoOf25PercentageShareHolders: 12
+                BusinessSector: Stock investment
+                Email: bankltd@gmail.com
+                Website: www.BankLTD.com
+              MainGuarantorAddress:
+                AddressId: 0
+                PostCode: "46000"
+                YearsAtAddress: 1
+                MonthAtAddress: 2
+                OccupancyType: Home Owner
+              RegisteredAddress:
+                AddressId: 0
+                PostCode: W1H 6HN
+              MainGuarantorPrevAddress:
+                AddressId: 0
+                PostCode: "44000"
+              MainBank:
+                BankName: UBL
+                SortCode: "222"
+                AccountNo: "22222222"
+              CheckListCategoryList:
+              - CheckListCategoryId: 1
+                Name: Old
+                IsHide: false
+                ApplicationCheckList:
+                - AppCheckId: 457570
+                  CheckListId: 1
+                  CheckListDesc: Loan Amount in Offered
+                  Required: true
+                - AppCheckId: 457571
+                  CheckListId: 2
+                  CheckListDesc: App Rec Email & SMS
+                  Required: true
+                - AppCheckId: 457572
+                  CheckListId: 3
+                  CheckListDesc: Companies House Pass
+                  Required: true
+                - AppCheckId: 457573
+                  CheckListId: 4
+                  CheckListDesc: Accounting Dates?
+                  Required: true
+                - AppCheckId: 457574
+                  CheckListId: 5
+                  CheckListDesc: Confirmation Statement Date?
+                  Required: true
+                - AppCheckId: 457575
+                  CheckListId: 6
+                  CheckListDesc: Directors
+                  Required: true
+                - AppCheckId: 457576
+                  CheckListId: 7
+                  CheckListDesc: PSC’s
+                  Required: true
+              - CheckListCategoryId: 10
+                Name: Root Parent
+                IsHide: false
+                CheckListChildCategoryList:
+                - CheckListCategoryId: 7
+                  Name: Underwriters Checklist
+                  ParentId: 10
+                  IsHide: false
+                  CheckListChildCategoryList:
+                  - CheckListCategoryId: 6
+                    Name: Customer Service Checklist
+                    ParentId: 7
+                    IsHide: false
+                    CheckListChildCategoryList:
+                    - CheckListCategoryId: 2
+                      Name: Post-Visit Checklist
+                      ParentId: 6
+                      IsHide: false
+                      ApplicationCheckList:
+                      - AppCheckId: 457577
+                        CheckListId: 91
+                        CheckListDesc: Risk Assess
+                        Required: true
+                      - AppCheckId: 457578
+                        CheckListId: 92
+                        CheckListDesc: Search Refresh
+                        Required: true
+                      - AppCheckId: 457579
+                        CheckListId: 93
+                        CheckListDesc: Fund via Barclays.net (-£195!)
+                        Required: true
+                      - AppCheckId: 457580
+                        CheckListId: 94
+                        CheckListDesc: Make a Loan in Emerald
+                        Required: true
+                      - AppCheckId: 457581
+                        CheckListId: 95
+                        CheckListDesc: Loan Funded Email
+                        Required: true
+                      - AppCheckId: 457582
+                        CheckListId: 96
+                        CheckListDesc: Send £1 for GT
+                        Required: true
+                      - AppCheckId: 457583
+                        CheckListId: 97
+                        CheckListDesc: Move to Funded
+                        Required: true
+              - CheckListCategoryId: 12
+                Name: Root Parent 1
+                IsHide: false
+                CheckListChildCategoryList:
+                - CheckListCategoryId: 11
+                  Name: Parent 1
+                  ParentId: 12
+                  IsHide: false
+                  CheckListChildCategoryList:
+                  - CheckListCategoryId: 4
+                    Name: Processing Ticklist
+                    ParentId: 11
+                    IsHide: false
+                    ApplicationCheckList:
+                    - AppCheckId: 457584
+                      CheckListId: 51
+                      CheckListDesc: Loan Amount in Offered
+                      Required: true
+                    - AppCheckId: 457585
+                      CheckListId: 52
+                      CheckListDesc: App Rec Email & SMS
+                      Required: true
+                    - AppCheckId: 457586
+                      CheckListId: 53
+                      CheckListDesc: Companies House Pass
+                      Required: true
+                    - AppCheckId: 457587
+                      CheckListId: 54
+                      CheckListDesc: Accounting Dates?
+                      Required: true
+                    - AppCheckId: 457588
+                      CheckListId: 55
+                      CheckListDesc: Confirmation Statement Date?
+                      Required: true
+                    - AppCheckId: 457589
+                      CheckListId: 56
+                      CheckListDesc: Directors
+                      Required: true
+                    - AppCheckId: 457590
+                      CheckListId: 57
+                      CheckListDesc: PSC’s
+                      Required: true
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ApplicationUpdateRequest'
+            example:
+              ApplicationId: 16992
+              LoanApplied: 15000
+              LoanTerm: 12
+              LoanPurpose: Stock
+              MainGuarantor:
+                GuarantorId: 0
+                Title: Mr
+                Forename: adeel
+                Surname: hassan
+                Dob: 1994-02-11T00:00:00
+                Mobile: fdsg42135
+                Email: adeelhassan592@gmail.com
+                Is25PercentShareHolder: false
+                IsDirector: false
+              Company:
+                CompanyId: 0
+                CompanyName: BANK LTD
+                RegistrationNo: "04348058"
+                BusinessType: Ltd Company
+                IncorporationDate: 2002-01-07T00:00:00
+                NoOfDirectors: 13
+                NoOf25PercentageShareHolders: 12
+                BusinessSector: Stock investment
+                Email: bankltd@gmail.com
+                Website: www.BankLTD.com
+              MainGuarantorAddress:
+                AddressId: 0
+                PostCode: "46000"
+                YearsAtAddress: 1
+                MonthAtAddress: 2
+                OccupancyType: Home Owner
+              RegisteredAddress:
+                AddressId: 0
+                PostCode: W1H 6HN
+              MainGuarantorPrevAddress:
+                AddressId: 0
+                PostCode: "44000"
+              MainBank:
+                BankName: UBL
+                SortCode: "222"
+                AccountNo: "22222222"
+              CheckListCategoryList:
+              - CheckListCategoryId: 1
+                Name: Old
+                IsHide: false
+                ApplicationCheckList:
+                - AppCheckId: 457570
+                  CheckListId: 1
+                  CheckListDesc: Loan Amount in Offered
+                  Required: true
+                - AppCheckId: 457571
+                  CheckListId: 2
+                  CheckListDesc: App Rec Email & SMS
+                  Required: true
+                - AppCheckId: 457572
+                  CheckListId: 3
+                  CheckListDesc: Companies House Pass
+                  Required: true
+                - AppCheckId: 457573
+                  CheckListId: 4
+                  CheckListDesc: Accounting Dates?
+                  Required: true
+                - AppCheckId: 457574
+                  CheckListId: 5
+                  CheckListDesc: Confirmation Statement Date?
+                  Required: true
+                - AppCheckId: 457575
+                  CheckListId: 6
+                  CheckListDesc: Directors
+                  Required: true
+                - AppCheckId: 457576
+                  CheckListId: 7
+                  CheckListDesc: PSC’s
+                  Required: true
+              - CheckListCategoryId: 10
+                Name: Root Parent
+                IsHide: false
+                CheckListChildCategoryList:
+                - CheckListCategoryId: 7
+                  Name: Underwriters Checklist
+                  ParentId: 10
+                  IsHide: false
+                  CheckListChildCategoryList:
+                  - CheckListCategoryId: 6
+                    Name: Customer Service Checklist
+                    ParentId: 7
+                    IsHide: false
+                    CheckListChildCategoryList:
+                    - CheckListCategoryId: 2
+                      Name: Post-Visit Checklist
+                      ParentId: 6
+                      IsHide: false
+                      ApplicationCheckList:
+                      - AppCheckId: 457577
+                        CheckListId: 91
+                        CheckListDesc: Risk Assess
+                        Required: true
+                      - AppCheckId: 457578
+                        CheckListId: 92
+                        CheckListDesc: Search Refresh
+                        Required: true
+                      - AppCheckId: 457579
+                        CheckListId: 93
+                        CheckListDesc: Fund via Barclays.net (-£195!)
+                        Required: true
+                      - AppCheckId: 457580
+                        CheckListId: 94
+                        CheckListDesc: Make a Loan in Emerald
+                        Required: true
+                      - AppCheckId: 457581
+                        CheckListId: 95
+                        CheckListDesc: Loan Funded Email
+                        Required: true
+                      - AppCheckId: 457582
+                        CheckListId: 96
+                        CheckListDesc: Send £1 for GT
+                        Required: true
+                      - AppCheckId: 457583
+                        CheckListId: 97
+                        CheckListDesc: Move to Funded
+                        Required: true
+              - CheckListCategoryId: 12
+                Name: Root Parent 1
+                IsHide: false
+                CheckListChildCategoryList:
+                - CheckListCategoryId: 11
+                  Name: Parent 1
+                  ParentId: 12
+                  IsHide: false
+                  CheckListChildCategoryList:
+                  - CheckListCategoryId: 4
+                    Name: Processing Ticklist
+                    ParentId: 11
+                    IsHide: false
+                    ApplicationCheckList:
+                    - AppCheckId: 457584
+                      CheckListId: 51
+                      CheckListDesc: Loan Amount in Offered
+                      Required: true
+                    - AppCheckId: 457585
+                      CheckListId: 52
+                      CheckListDesc: App Rec Email & SMS
+                      Required: true
+                    - AppCheckId: 457586
+                      CheckListId: 53
+                      CheckListDesc: Companies House Pass
+                      Required: true
+                    - AppCheckId: 457587
+                      CheckListId: 54
+                      CheckListDesc: Accounting Dates?
+                      Required: true
+                    - AppCheckId: 457588
+                      CheckListId: 55
+                      CheckListDesc: Confirmation Statement Date?
+                      Required: true
+                    - AppCheckId: 457589
+                      CheckListId: 56
+                      CheckListDesc: Directors
+                      Required: true
+                    - AppCheckId: 457590
+                      CheckListId: 57
+                      CheckListDesc: PSC’s
+                      Required: true
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Application
+  /api/Auth/login:
+    post:
+      tags:
+      - Auth
+      operationId: apiAuthLoginPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Auth
+  /api/Dashboard/ApplicationStatuses:
+    get:
+      tags:
+      - Dashboard
+      operationId: apiDashboardApplicationStatusesGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Dashboard
+  /api/Dashboard/ChaseList:
+    get:
+      tags:
+      - Dashboard
+      operationId: apiDashboardChaseListGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Dashboard
+  /api/Dashboard/CompanyOverview:
+    get:
+      tags:
+      - Dashboard
+      operationId: apiDashboardCompanyOverviewGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Dashboard
+  /api/Dashboard/CustomersList:
+    get:
+      tags:
+      - Dashboard
+      operationId: apiDashboardCustomersListGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Dashboard
+  /api/Dashboard/MonthlyGrowth:
+    get:
+      tags:
+      - Dashboard
+      operationId: apiDashboardMonthlyGrowthGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Dashboard
+  /api/Dashboard/PendingApplications:
+    get:
+      tags:
+      - Dashboard
+      operationId: apiDashboardPendingApplicationsGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Dashboard
+  /api/Document/GetApplicationDocuments/{applicationId}:
+    get:
+      tags:
+      - Document
+      operationId: apiDocumentGetApplicationDocumentsApplicationIdGET
+      parameters:
+      - name: applicationId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          format: double
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Document
+  /api/Document/LoanAgreement:
+    post:
+      tags:
+      - Document
+      operationId: apiDocumentLoanAgreementPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/RightSignatureRequest'
+            example:
+              ApplicationId: 2
+              DocumentId: 33
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RightSignatureRequest'
+            example:
+              ApplicationId: 2
+              DocumentId: 33
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RightSignatureRequest'
+            example:
+              ApplicationId: 2
+              DocumentId: 33
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RightSignatureRequest'
+            example:
+              ApplicationId: 2
+              DocumentId: 33
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Document
+  /api/Document/Upload:
+    post:
+      tags:
+      - Document
+      operationId: apiDocumentUploadPOST
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/body'
+            encoding:
+              ApplicationId:
+                style: form
+              IsReceived:
+                style: form
+              DocumentType:
+                style: form
+              Document:
+                style: form
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Document
+  /api/Notification/SendEmail:
+    post:
+      tags:
+      - Notification
+      operationId: apiNotificationSendEmailPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+            example:
+              To: bloodshot959@gmail.com
+              CC: testcibak@gmail.com
+              Subject: Test Email
+              Message: It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout. The
+                point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making
+                it look like readable English. Many desktop publishing packages and
+                web page editors now use Lorem Ipsum as their default model text,
+                and a search for 'lorem ipsum' will uncover many web sites still in
+                their infancy. Various versions have evolved over the years, sometimes
+                by accident, sometimes on purpose (injected humour and the like).
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+            example:
+              To: bloodshot959@gmail.com
+              CC: testcibak@gmail.com
+              Subject: Test Email
+              Message: It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout. The
+                point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making
+                it look like readable English. Many desktop publishing packages and
+                web page editors now use Lorem Ipsum as their default model text,
+                and a search for 'lorem ipsum' will uncover many web sites still in
+                their infancy. Various versions have evolved over the years, sometimes
+                by accident, sometimes on purpose (injected humour and the like).
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+            example:
+              To: bloodshot959@gmail.com
+              CC: testcibak@gmail.com
+              Subject: Test Email
+              Message: It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout. The
+                point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making
+                it look like readable English. Many desktop publishing packages and
+                web page editors now use Lorem Ipsum as their default model text,
+                and a search for 'lorem ipsum' will uncover many web sites still in
+                their infancy. Various versions have evolved over the years, sometimes
+                by accident, sometimes on purpose (injected humour and the like).
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+            example:
+              To: bloodshot959@gmail.com
+              CC: testcibak@gmail.com
+              Subject: Test Email
+              Message: It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout. The
+                point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making
+                it look like readable English. Many desktop publishing packages and
+                web page editors now use Lorem Ipsum as their default model text,
+                and a search for 'lorem ipsum' will uncover many web sites still in
+                their infancy. Various versions have evolved over the years, sometimes
+                by accident, sometimes on purpose (injected humour and the like).
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Notification
+  /api/Payment/ProcessPayment:
+    post:
+      tags:
+      - Payment
+      operationId: apiPaymentProcessPaymentPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ProcessPaymentRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessPaymentRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ProcessPaymentRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ProcessPaymentRequest'
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Payment
+  /api/Payment/PaymentResponse/{CompanyID}:
+    get:
+      tags:
+      - Payment
+      operationId: apiPaymentPaymentResponseCompanyIDGET
+      parameters:
+      - name: CompanyID
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          format: double
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Payment
+  /api/Payment/PaymentJob:
+    get:
+      tags:
+      - Payment
+      operationId: apiPaymentPaymentJobGET
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Payment
+  /api/Payment/Schedule/Generate:
+    post:
+      tags:
+      - Payment
+      operationId: apiPaymentScheduleGeneratePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleGenerateRequest'
+            example:
+              ScheduleType: 15
+              StartDate: 04-Oct-2019
+              Time: 12:00
+              EndDate: 04-Nov-2019
+              Amount: 50000
+              PaymentMethod: 6
+              IsAppend: false
+              PaymentScheduleList:
+              - DueDateStr: 04-Oct-2019
+                DueDate: 2019-10-04T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 01-Oct-2019
+                SubmitDate: 2019-10-01T12:00:00
+              - DueDateStr: 18-Oct-2019
+                DueDate: 2019-10-18T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 15-Oct-2019
+                SubmitDate: 2019-10-15T12:00:00
+              - DueDateStr: 01-Nov-2019
+                DueDate: 2019-11-01T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 29-Oct-2019
+                SubmitDate: 2019-10-29T12:00:00
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleGenerateRequest'
+            example:
+              ScheduleType: 15
+              StartDate: 04-Oct-2019
+              Time: 12:00
+              EndDate: 04-Nov-2019
+              Amount: 50000
+              PaymentMethod: 6
+              IsAppend: false
+              PaymentScheduleList:
+              - DueDateStr: 04-Oct-2019
+                DueDate: 2019-10-04T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 01-Oct-2019
+                SubmitDate: 2019-10-01T12:00:00
+              - DueDateStr: 18-Oct-2019
+                DueDate: 2019-10-18T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 15-Oct-2019
+                SubmitDate: 2019-10-15T12:00:00
+              - DueDateStr: 01-Nov-2019
+                DueDate: 2019-11-01T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 29-Oct-2019
+                SubmitDate: 2019-10-29T12:00:00
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleGenerateRequest'
+            example:
+              ScheduleType: 15
+              StartDate: 04-Oct-2019
+              Time: 12:00
+              EndDate: 04-Nov-2019
+              Amount: 50000
+              PaymentMethod: 6
+              IsAppend: false
+              PaymentScheduleList:
+              - DueDateStr: 04-Oct-2019
+                DueDate: 2019-10-04T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 01-Oct-2019
+                SubmitDate: 2019-10-01T12:00:00
+              - DueDateStr: 18-Oct-2019
+                DueDate: 2019-10-18T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 15-Oct-2019
+                SubmitDate: 2019-10-15T12:00:00
+              - DueDateStr: 01-Nov-2019
+                DueDate: 2019-11-01T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 29-Oct-2019
+                SubmitDate: 2019-10-29T12:00:00
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleGenerateRequest'
+            example:
+              ScheduleType: 15
+              StartDate: 04-Oct-2019
+              Time: 12:00
+              EndDate: 04-Nov-2019
+              Amount: 50000
+              PaymentMethod: 6
+              IsAppend: false
+              PaymentScheduleList:
+              - DueDateStr: 04-Oct-2019
+                DueDate: 2019-10-04T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 01-Oct-2019
+                SubmitDate: 2019-10-01T12:00:00
+              - DueDateStr: 18-Oct-2019
+                DueDate: 2019-10-18T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 15-Oct-2019
+                SubmitDate: 2019-10-15T12:00:00
+              - DueDateStr: 01-Nov-2019
+                DueDate: 2019-11-01T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 29-Oct-2019
+                SubmitDate: 2019-10-29T12:00:00
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Payment
+  /api/Payment/Schedule/Create:
+    post:
+      tags:
+      - Payment
+      operationId: apiPaymentScheduleCreatePOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleCreateRequest'
+            example:
+              ApplicationID: 4448
+              LoanID: 227
+              PaymentScheduleList:
+              - DueDateStr: 04-Oct-2019
+                DueDate: 2019-10-04T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 01-Oct-2019
+                SubmitDate: 2019-10-01T12:00:00
+              - DueDateStr: 18-Oct-2019
+                DueDate: 2019-10-18T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 15-Oct-2019
+                SubmitDate: 2019-10-15T12:00:00
+              - DueDateStr: 01-Nov-2019
+                DueDate: 2019-11-01T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 29-Oct-2019
+                SubmitDate: 2019-10-29T12:00:00
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleCreateRequest'
+            example:
+              ApplicationID: 4448
+              LoanID: 227
+              PaymentScheduleList:
+              - DueDateStr: 04-Oct-2019
+                DueDate: 2019-10-04T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 01-Oct-2019
+                SubmitDate: 2019-10-01T12:00:00
+              - DueDateStr: 18-Oct-2019
+                DueDate: 2019-10-18T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 15-Oct-2019
+                SubmitDate: 2019-10-15T12:00:00
+              - DueDateStr: 01-Nov-2019
+                DueDate: 2019-11-01T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 29-Oct-2019
+                SubmitDate: 2019-10-29T12:00:00
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleCreateRequest'
+            example:
+              ApplicationID: 4448
+              LoanID: 227
+              PaymentScheduleList:
+              - DueDateStr: 04-Oct-2019
+                DueDate: 2019-10-04T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 01-Oct-2019
+                SubmitDate: 2019-10-01T12:00:00
+              - DueDateStr: 18-Oct-2019
+                DueDate: 2019-10-18T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 15-Oct-2019
+                SubmitDate: 2019-10-15T12:00:00
+              - DueDateStr: 01-Nov-2019
+                DueDate: 2019-11-01T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 29-Oct-2019
+                SubmitDate: 2019-10-29T12:00:00
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleCreateRequest'
+            example:
+              ApplicationID: 4448
+              LoanID: 227
+              PaymentScheduleList:
+              - DueDateStr: 04-Oct-2019
+                DueDate: 2019-10-04T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 01-Oct-2019
+                SubmitDate: 2019-10-01T12:00:00
+              - DueDateStr: 18-Oct-2019
+                DueDate: 2019-10-18T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 15-Oct-2019
+                SubmitDate: 2019-10-15T12:00:00
+              - DueDateStr: 01-Nov-2019
+                DueDate: 2019-11-01T12:00:00
+                Amount: 16666.666666666668
+                PaymentMethod: 6
+                PaymentMethodStr: GoCardless
+                PaymentScheduleType: 15
+                PaymentScheduleTypeStr: Bimonthly
+                Time: 12:00
+                SubmitDateStr: 29-Oct-2019
+                SubmitDate: 2019-10-29T12:00:00
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Payment
+  /api/Payment/ScheduleDetails:
+    post:
+      tags:
+      - Payment
+      operationId: apiPaymentScheduleDetailsPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleDetailRequest'
+            example:
+              ApplicationId: 99
+              PageIndex: 1
+              ItemsPage: 10
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleDetailRequest'
+            example:
+              ApplicationId: 99
+              PageIndex: 1
+              ItemsPage: 10
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleDetailRequest'
+            example:
+              ApplicationId: 99
+              PageIndex: 1
+              ItemsPage: 10
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleDetailRequest'
+            example:
+              ApplicationId: 99
+              PageIndex: 1
+              ItemsPage: 10
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Payment
+  /api/Payment/ArrearsCleared:
+    post:
+      tags:
+      - Payment
+      operationId: apiPaymentArrearsClearedPOST
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleDetailRequest'
+            example:
+              ApplicationId: 99
+              PageIndex: 1
+              ItemsPage: 10
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleDetailRequest'
+            example:
+              ApplicationId: 99
+              PageIndex: 1
+              ItemsPage: 10
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleDetailRequest'
+            example:
+              ApplicationId: 99
+              PageIndex: 1
+              ItemsPage: 10
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/PaymentScheduleDetailRequest'
+            example:
+              ApplicationId: 99
+              PageIndex: 1
+              ItemsPage: 10
+      responses:
+        200:
+          description: Success
+      x-swagger-router-controller: Payment
+components:
+  schemas:
+    CheckListCategoryCreateRequest:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          maxLength: 100
+          type: string
+        parentId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    ApplicationNoteCategoryRequest:
+      type: object
+      properties:
+        categoryName:
+          type: string
+      additionalProperties: false
+    GuarantorRolesCreateRequest:
+      required:
+      - role
+      type: object
+      properties:
+        role:
+          maxLength: 50
+          type: string
+      additionalProperties: false
+    MaritalStatusCreateRequest:
+      required:
+      - status
+      type: object
+      properties:
+        status:
+          maxLength: 50
+          type: string
+      additionalProperties: false
+    BusinessTypeCreateRequest:
+      required:
+      - business
+      type: object
+      properties:
+        business:
+          maxLength: 50
+          type: string
+      additionalProperties: false
+    LoanProductCreateRequest:
+      required:
+      - productName
+      type: object
+      properties:
+        productName:
+          maxLength: 50
+          type: string
+        perc:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    RolePermissionViewModel:
+      type: object
+      properties:
+        rolePermissionId:
+          type: integer
+          format: int32
+        permissionId:
+          type: integer
+          format: int32
+        permissionName:
+          type: string
+        canEdit:
+          type: boolean
+        canView:
+          type: boolean
+        canAdd:
+          type: boolean
+      additionalProperties: false
+    RolePermissionModificationRequest:
+      type: object
+      properties:
+        rolePermissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/RolePermissionViewModel'
+        roleId:
+          type: string
+      additionalProperties: false
+    ApplicationUserRequest:
+      type: object
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        userName:
+          type: string
+        passwordHash:
+          type: string
+        roleName:
+          type: string
+      additionalProperties: false
+    ApplicationUserUpdateRequest:
+      type: object
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        userName:
+          type: string
+        passwordHash:
+          type: string
+        roleName:
+          type: string
+      additionalProperties: false
+    ApplicationRoleRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        normalizedName:
+          type: string
+        concurrencyStamp:
+          type: string
+      additionalProperties: false
+    AccountScoreRequest:
+      type: object
+      properties:
+        companyID:
+          type: number
+          format: double
+        applicationID:
+          type: number
+          format: double
+        isExisintg:
+          type: boolean
+      additionalProperties: false
+    MainGuarantorData:
+      type: object
+      properties:
+        guarantorID:
+          type: integer
+          format: int32
+        companyID:
+          type: integer
+          format: int32
+        forName:
+          type: string
+        surName:
+          type: string
+        birth:
+          type: string
+        status:
+          type: string
+        title:
+          type: string
+        mobile:
+          type: string
+        landline:
+          type: string
+        email:
+          type: string
+        shareholder:
+          type: string
+        is25PercentShareHolder:
+          type: boolean
+        director:
+          type: boolean
+      additionalProperties: false
+    CompanyData:
+      type: object
+      properties:
+        companyID:
+          type: integer
+          format: int32
+        companyName:
+          type: string
+        coRegNo:
+          type: string
+        website:
+          type: string
+        tradingAs:
+          type: string
+        businessSector:
+          type: string
+        email:
+          type: string
+        businessType:
+          type: string
+        incorporationDate:
+          type: string
+        shareholders:
+          type: string
+        director:
+          type: string
+        noOfDirectors:
+          type: integer
+          format: int32
+        haveBusinessLease:
+          type: boolean
+          nullable: true
+        instagram:
+          type: string
+        facebook:
+          type: string
+        noOf25PercentageShareHolders:
+          type: integer
+          format: int32
+      additionalProperties: false
+    AddressData:
+      type: object
+      properties:
+        addressID:
+          type: integer
+          format: int32
+        guarantorID:
+          type: integer
+          format: int32
+        companyID:
+          type: integer
+          format: int32
+        property:
+          type: string
+        street:
+          type: string
+        locality:
+          type: string
+        county:
+          type: string
+        town:
+          type: string
+        postCode:
+          type: string
+        email:
+          type: string
+        telephone:
+          type: string
+        businessCategory:
+          type: string
+        businessSector:
+          type: string
+        websites:
+          type: string
+        vatNo:
+          type: string
+        addressType:
+          type: integer
+          format: int32
+        addressOrder:
+          type: integer
+          format: int32
+        noOfEmployees:
+          type: string
+      additionalProperties: false
+    ApplicationCreateRequest:
+      type: object
+      properties:
+        loanApplied:
+          type: number
+          format: double
+        loanTerm:
+          type: integer
+          format: int32
+        loanPurpose:
+          type: string
+        whenYouNeedLoan:
+          type: string
+        applicationStatusId:
+          type: number
+          format: double
+        haveBusinessRevenue:
+          type: boolean
+          nullable: true
+        applyOnBehalf:
+          type: boolean
+          nullable: true
+        haveExistingLoans:
+          type: boolean
+          nullable: true
+        applicationScoreFromWeb:
+          type: number
+          format: double
+          nullable: true
+        monthlyTotalSales:
+          type: number
+          format: double
+        mainGuarantor:
+          $ref: '#/components/schemas/MainGuarantorData'
+        companyDatas:
+          $ref: '#/components/schemas/CompanyData'
+        addressview:
+          $ref: '#/components/schemas/AddressData'
+      additionalProperties: false
+    DuplicateLookupRequest:
+      type: object
+      properties:
+        applicationID:
+          type: integer
+          format: int32
+        duplicateApplicationID:
+          type: integer
+          format: int32
+      additionalProperties: false
+    EquifaxRequest:
+      type: object
+      properties:
+        companyID:
+          type: number
+          format: double
+        isExisting:
+          type: boolean
+        isReport:
+          type: boolean
+      additionalProperties: false
+    AddressLookupRequest:
+      type: object
+      properties:
+        postCode:
+          type: string
+      additionalProperties: false
+    CompanyLookupRequest:
+      type: object
+      properties:
+        name:
+          type: string
+      additionalProperties: false
+    ApplicationNotesDetailsRequest:
+      type: object
+      properties:
+        applicationId:
+          type: number
+          format: double
+        categoryId:
+          type: integer
+          format: int32
+        noteDetails:
+          type: string
+        createdBy:
+          type: string
+      additionalProperties: false
+    ApplicationsSearchRequest:
+      type: object
+      properties:
+        pageIndex:
+          type: integer
+          format: int32
+        itemsPage:
+          type: integer
+          format: int32
+        surname:
+          type: string
+        forename:
+          type: string
+        postcode:
+          type: string
+        email:
+          type: string
+        town:
+          type: string
+        phone:
+          type: string
+        companyId:
+          type: number
+          format: double
+          nullable: true
+        companyName:
+          type: string
+        accountNo:
+          type: string
+        sortcode:
+          type: string
+        appNo:
+          type: number
+          format: double
+          nullable: true
+        loanStatus:
+          type: integer
+          format: int32
+          nullable: true
+        appStatus:
+          type: integer
+          format: int32
+          nullable: true
+        appDate:
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    GuarantorViewModel:
+      type: object
+      properties:
+        guarantorId:
+          type: number
+          format: double
+        title:
+          type: string
+        forename:
+          type: string
+        surname:
+          type: string
+        dob:
+          type: string
+          format: date-time
+          nullable: true
+        mobile:
+          type: string
+        landline:
+          type: string
+        email:
+          type: string
+        sharePercentage:
+          type: number
+          format: double
+          nullable: true
+        is25PercentShareHolder:
+          type: boolean
+        isDirector:
+          type: boolean
+        role:
+          type: string
+        maritalStatus:
+          type: string
+      additionalProperties: false
+    CompanyViewModel:
+      type: object
+      properties:
+        companyId:
+          type: number
+          format: double
+        companyName:
+          type: string
+        tradingName:
+          type: string
+        registrationNo:
+          type: string
+        businessType:
+          type: string
+        incorporationDate:
+          type: string
+          format: date-time
+        noOfDirectors:
+          type: integer
+          format: int32
+        noOf25PercentageShareHolders:
+          type: integer
+          format: int32
+        vatno:
+          type: string
+        businessSector:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+        website:
+          type: string
+        noofEmployees:
+          type: string
+        businessCategory:
+          type: string
+        dontLend:
+          type: boolean
+          nullable: true
+        noMarketing:
+          type: boolean
+          nullable: true
+        smsonly:
+          type: boolean
+          nullable: true
+        emailOnly:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    AddressViewModel:
+      type: object
+      properties:
+        addressId:
+          type: number
+          format: double
+        property:
+          type: string
+        postCode:
+          type: string
+        yearsAtAddress:
+          type: integer
+          format: int32
+          nullable: true
+        monthAtAddress:
+          type: integer
+          format: int32
+          nullable: true
+        occupancyType:
+          type: string
+      additionalProperties: false
+    BankViewModel:
+      type: object
+      properties:
+        bankName:
+          type: string
+        sortCode:
+          type: string
+        accountNo:
+          type: string
+      additionalProperties: false
+    ApplicationCheckListViewModel:
+      type: object
+      properties:
+        appCheckId:
+          type: number
+          format: double
+        checkListId:
+          type: number
+          format: double
+        checkListDesc:
+          type: string
+        required:
+          type: boolean
+          nullable: true
+        notRequired:
+          type: boolean
+          nullable: true
+        checkIN:
+          type: boolean
+          nullable: true
+        checkINPlus:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    CheckListCategoryViewModel:
+      type: object
+      properties:
+        checkListCategoryId:
+          type: integer
+          format: int32
+        name:
+          type: string
+        parentId:
+          type: integer
+          format: int32
+          nullable: true
+        isHide:
+          type: boolean
+        checkListChildCategoryList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CheckListCategoryViewModel'
+        applicationCheckList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationCheckListViewModel'
+      additionalProperties: false
+    ApplicationUpdateRequest:
+      type: object
+      properties:
+        applicationId:
+          type: number
+          format: double
+        loanApplied:
+          type: number
+          format: double
+        loanOffered:
+          type: number
+          format: double
+          nullable: true
+        loanProductName:
+          type: string
+        loanTerm:
+          type: integer
+          format: int32
+        costOfCredit:
+          type: number
+          format: double
+          nullable: true
+        loanPurpose:
+          type: string
+        loanGradeName:
+          type: string
+        teamName:
+          type: string
+        source:
+          type: string
+        mainGuarantor:
+          $ref: '#/components/schemas/GuarantorViewModel'
+        company:
+          $ref: '#/components/schemas/CompanyViewModel'
+        mainGuarantorAddress:
+          $ref: '#/components/schemas/AddressViewModel'
+        registeredAddress:
+          $ref: '#/components/schemas/AddressViewModel'
+        mainGuarantorPrevAddress:
+          $ref: '#/components/schemas/AddressViewModel'
+        mainBank:
+          $ref: '#/components/schemas/BankViewModel'
+        checkListCategoryList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CheckListCategoryViewModel'
+        applicationCheckList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApplicationCheckListViewModel'
+      additionalProperties: false
+    LoginRequest:
+      type: object
+      properties:
+        userName:
+          type: string
+        password:
+          type: string
+      additionalProperties: false
+    RightSignatureRequest:
+      type: object
+      properties:
+        applicationId:
+          type: number
+          format: double
+        documentId:
+          type: number
+          format: double
+      additionalProperties: false
+    EmailRequest:
+      type: object
+      properties:
+        to:
+          type: string
+        cc:
+          type: string
+        subject:
+          type: string
+        message:
+          type: string
+      additionalProperties: false
+    ProcessPaymentRequest:
+      type: object
+      properties:
+        companyID:
+          type: integer
+          format: int32
+        guaranterID:
+          type: integer
+          format: int32
+        addressID:
+          type: integer
+          format: int32
+      additionalProperties: false
+    PaymentScheduleGenerateViewModel:
+      type: object
+      properties:
+        dueDateStr:
+          type: string
+        dueDate:
+          type: string
+          format: date-time
+        amount:
+          type: number
+          format: double
+        paymentMethod:
+          type: integer
+          format: int32
+        paymentMethodStr:
+          type: string
+        paymentScheduleType:
+          type: integer
+          format: int32
+        paymentScheduleTypeStr:
+          type: string
+        time:
+          type: string
+        submitDateStr:
+          type: string
+        submitDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+    PaymentScheduleGenerateRequest:
+      type: object
+      properties:
+        scheduleType:
+          type: integer
+          format: int32
+        startDate:
+          type: string
+        time:
+          type: string
+        endDate:
+          type: string
+        amount:
+          type: number
+          format: double
+        paymentMethod:
+          type: integer
+          format: int32
+        isAppend:
+          type: boolean
+        paymentScheduleList:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentScheduleGenerateViewModel'
+      additionalProperties: false
+    PaymentScheduleCreateRequest:
+      type: object
+      properties:
+        applicationID:
+          type: number
+          format: double
+        loanID:
+          type: number
+          format: double
+        paymentScheduleList:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentScheduleGenerateViewModel'
+      additionalProperties: false
+    PaymentScheduleDetailRequest:
+      type: object
+      properties:
+        applicationId:
+          type: number
+          format: double
+        pageIndex:
+          type: integer
+          format: int32
+        itemsPage:
+          type: integer
+          format: int32
+      additionalProperties: false
+    body:
+      type: object
+      properties:
+        ApplicationId:
+          type: number
+          format: double
+        IsReceived:
+          type: boolean
+        DocumentType:
+          type: integer
+          format: int32
+        Document:
+          type: string
+          format: binary
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter\
+        \ 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample:\
+        \ \"Bearer 12345abcdef\""
+      name: Authorization
+      in: header
